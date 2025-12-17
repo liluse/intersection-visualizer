@@ -12,7 +12,7 @@ export const Playground = () => {
         <div >
           <Sidebar />
         </div>
-        </div>
+      </div>
     </PlaygroundProvider>
   );
 }

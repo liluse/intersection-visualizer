@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import type { ObservableElement } from "../types";
 
 export const Target = ({ element }: {
   element: ObservableElement

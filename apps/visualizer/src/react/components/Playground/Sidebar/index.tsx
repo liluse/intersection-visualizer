@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import { usePlayground } from '../context/usePlayground';
+import type { ObservableElement } from '../types';
 
 
-const TargetInfo = ({ element, index }: { element: ObservableElement, index: number }) => {
+const TargetInfo = ({ element }: { element: ObservableElement }) => {
 
   const { intersectionRatio, isIntersecting, name } = element;
 
@@ -49,7 +49,7 @@ const TargetInfo = ({ element, index }: { element: ObservableElement, index: num
             <span className="text-blue-300">intersectionRatio</span>
             <span className="text-white">{intersectionRatio?.toFixed(2)}</span>
           </div>
-            <div className="h-1.5 w-full bg-background-dark rounded-full overflow-hidden border border-surface-border">
+          <div className="h-1.5 w-full bg-background-dark rounded-full overflow-hidden border border-surface-border">
             <div className="h-full bg-blue-500" style={{ width: `${intersectionRatio * 100}%` }}></div>
           </div>
         </div>
@@ -65,8 +65,8 @@ export const Sidebar = () => {
   return (
     <div className=''>
       {
-        observedElements?.map((el, index) => (
-          <TargetInfo key={index} element={el} index={index} />
+        observedElements?.map((element, index) => (
+          <TargetInfo key={index} element={element} />
         ))
       }
     </div>

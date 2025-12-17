@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "lint": "eslint . --ext .ts,.tsx,.astro",
     "astro": "astro"
   },
   "dependencies": {
@@ -19,5 +20,12 @@
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3",
     "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "8.50.0",
+    "eslint": "9.39.2",
+    "eslint-plugin-astro": "1.5.0",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.0.1"
   }
 }
