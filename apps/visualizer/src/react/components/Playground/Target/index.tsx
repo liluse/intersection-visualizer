@@ -21,10 +21,25 @@ export const Target = ({ element }: {
     }
   };
 
+  const getTextColorClasses = () => {
+    switch (state) {
+      case 'visible':
+        return 'bg-green-400';
+      case 'hidden':
+        return 'bg-red-400';
+      case 'partialVisible':
+        return 'bg-yellow-400';
+      default:
+        return 'bg-gray-400';
+    }
+  }
+
   return (
-    <div id={element.id} className={`m-5 p-10 rounded-sm shadow-md h-48 border flex items-center justify-center ${getColorClasses()}`}>
-      <h2 className='text-slate-800'>Intersection Observer Playground</h2>
-    </div>
+    <div id={element.id} className={`m-5 p-0 rounded-sm shadow-md h-48 border flex items-center justify-center ${getColorClasses()}`}>
+      <div className={`${getTextColorClasses()} p-4 rounded-sm`}>
+        <h2 className={`text-white-800 text-shadow-2xs`}>{element.name}</h2>
+      </div>
+    </div >
   );
 }
 
